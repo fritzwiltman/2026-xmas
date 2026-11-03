@@ -194,7 +194,13 @@
   .row-value .sub { display: block; font-size: 0.8rem; color: var(--muted); }
 
   .map-link { color: inherit; text-decoration: none; }
-  .map-link:hover { color: var(--cranberry); text-decoration: underline; }
+  .map-link:hover .dir { color: var(--cranberry); }
+  .map-link .dir {
+    font-weight: 600;
+    color: var(--holly);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
   .card-foot {
     padding: 0.9rem 1.25rem 1.15rem;
     background: var(--snow);
@@ -266,7 +272,7 @@
         </div>
         <div class="row">
           <div class="row-label">Drive</div>
-          <div class="row-value"><a class="map-link" href="https://maps.apple/r/H_FJsbfKhcK5BW" target="_blank" rel="noopener"><strong>~1 hr</strong> from the Airbnb · Directions ↗</a></div>
+          <div class="row-value"><a class="map-link" href="https://maps.apple/r/H_FJsbfKhcK5BW" target="_blank" rel="noopener"><strong>~1 hr</strong> from the Airbnb · <span class="dir">Apple Directions ↗</span></a></div>
         </div>
         <div class="row">
           <div class="row-label">Book 12/24</div>
@@ -311,7 +317,7 @@
         </div>
         <div class="row">
           <div class="row-label">Drive</div>
-          <div class="row-value"><a class="map-link" href="https://maps.apple/r/JAmHtNo_eEXx6v" target="_blank" rel="noopener"><strong>15 min</strong> from the Airbnb · Directions ↗</a></div>
+          <div class="row-value"><a class="map-link" href="https://maps.apple/r/JAmHtNo_eEXx6v" target="_blank" rel="noopener"><strong>15 min</strong> from the Airbnb · <span class="dir">Apple Directions ↗</span></a></div>
         </div>
         <div class="row">
           <div class="row-label">Book 12/24</div>
@@ -346,7 +352,7 @@
         </div>
         <div class="row">
           <div class="row-label">Drive</div>
-          <div class="row-value"><a class="map-link" href="https://maps.apple/r/YcL5D9BdyX~uaH" target="_blank" rel="noopener"><strong>45 min</strong> from the Airbnb · Directions ↗</a></div>
+          <div class="row-value"><a class="map-link" href="https://maps.apple/r/YcL5D9BdyX~uaH" target="_blank" rel="noopener"><strong>45 min</strong> from the Airbnb · <span class="dir">Apple Directions ↗</span></a></div>
         </div>
         <div class="row">
           <div class="row-label">Book 12/24</div>
