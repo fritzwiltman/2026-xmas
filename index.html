@@ -145,6 +145,17 @@
     color: var(--gold-soft);
     margin-bottom: 0.3rem;
   }
+  .pick {
+    display: inline-block;
+    margin-left: 0.4rem;
+    padding: 0.12rem 0.5rem;
+    border-radius: 999px;
+    background: var(--gold);
+    color: var(--evergreen-deep);
+    letter-spacing: 0.1em;
+    font-size: 0.6rem;
+    vertical-align: 1px;
+  }
   .card-name {
     font-family: 'Fraunces', serif;
     font-weight: 600;
@@ -240,7 +251,7 @@
     <article class="card">
       <img class="card-img" src="images/palmetto-dunes.jpg" alt="Palmetto Dunes golf course" onerror="this.remove()">
       <div class="card-head">
-        <div class="card-num">Option 1</div>
+        <div class="card-num">Option 1 <span class="pick">My pick</span></div>
         <div class="card-name">Palmetto Dunes Resort</div>
         <div class="card-place">Hilton Head Island, SC · 3 courses</div>
       </div>
@@ -285,7 +296,7 @@
     <article class="card">
       <img class="card-img" src="images/savannah-harbor.jpg" alt="The Club at Savannah Harbor" onerror="this.remove()">
       <div class="card-head">
-        <div class="card-num">Option 2</div>
+        <div class="card-num">Option 2 <span class="pick">Pick if staying close</span></div>
         <div class="card-name">The Club at Savannah Harbor</div>
         <div class="card-place">Savannah, GA</div>
       </div>
