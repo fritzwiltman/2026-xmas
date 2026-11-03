@@ -3,375 +3,332 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Savannah Christmas Golf</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Christmas Golf in Savannah</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --pine: #1a3020;
-    --pine-mid: #2d5036;
-    --pine-light: #3d6b47;
-    --sage: #7a9e7e;
-    --sand: #d4bc8a;
-    --sand-light: #e8d9b5;
-    --cream: #f5f0e8;
-    --warm-white: #faf8f4;
-    --charcoal: #1e1e1e;
-    --mid-gray: #5a5a5a;
-    --light-gray: #e8e4de;
+    --evergreen: #123524;
+    --evergreen-deep: #0b2418;
+    --holly: #1f5a3c;
+    --cranberry: #9e1b32;
+    --gold: #d4a24c;
+    --gold-soft: #f1dfb6;
+    --snow: #fbf8f2;
+    --paper: #ffffff;
+    --ink: #1d1d1b;
+    --muted: #66625a;
+    --line: #ebe4d6;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--warm-white);
-    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+    background: var(--snow);
+    color: var(--ink);
     min-height: 100vh;
   }
 
   /* ── HERO ── */
   .hero {
-    background: var(--pine);
-    color: var(--cream);
-    padding: 3rem 1.5rem 2.5rem;
+    background:
+      radial-gradient(circle at 12% 30%, rgba(255,255,255,0.18) 0 2px, transparent 3px),
+      radial-gradient(circle at 78% 18%, rgba(255,255,255,0.14) 0 1.5px, transparent 2.5px),
+      radial-gradient(circle at 42% 72%, rgba(255,255,255,0.12) 0 2px, transparent 3px),
+      radial-gradient(circle at 90% 64%, rgba(255,255,255,0.16) 0 1.5px, transparent 2.5px),
+      radial-gradient(circle at 26% 88%, rgba(255,255,255,0.10) 0 1.5px, transparent 2.5px),
+      linear-gradient(160deg, var(--holly), var(--evergreen) 55%, var(--evergreen-deep));
+    background-size: 140px 140px, 190px 190px, 230px 230px, 170px 170px, 260px 260px, 100% 100%;
+    color: var(--snow);
+    padding: 3.25rem 1rem 3.75rem;
+    text-align: center;
     position: relative;
-    overflow: hidden;
   }
-  .hero::before {
+  .hero::after {
     content: '';
     position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 40px,
-      rgba(255,255,255,0.015) 40px,
-      rgba(255,255,255,0.015) 80px
-    );
-  }
-  .hero-inner {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
+    left: 0; right: 0; bottom: 0;
+    height: 6px;
+    background: repeating-linear-gradient(90deg,
+      var(--cranberry) 0 18px, var(--snow) 18px 36px);
   }
   .hero-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--sand);
-    margin-bottom: 1rem;
-    opacity: 0.85;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
   }
   .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.4rem, 7vw, 4rem);
-    font-weight: 900;
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: clamp(2.3rem, 8vw, 3.75rem);
     line-height: 1.05;
-    color: var(--cream);
-    margin-bottom: 0.5rem;
   }
   .hero h1 em {
     font-style: italic;
-    color: var(--sand);
+    font-weight: 600;
+    color: var(--gold-soft);
   }
-  .hero-subtitle {
-    font-size: 0.95rem;
-    color: var(--sage);
+  .hero-sub {
     margin-top: 1rem;
-    letter-spacing: 0.04em;
-    font-weight: 300;
+    font-size: 0.95rem;
+    color: rgba(251,248,242,0.75);
   }
-  .hero-meta {
+  .hero-chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem 1.5rem;
-    margin-top: 1.75rem;
-    padding-top: 1.75rem;
-    border-top: 1px solid rgba(255,255,255,0.12);
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
   }
-  .hero-meta-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-  .hero-meta-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--sage);
-    opacity: 0.7;
-  }
-  .hero-meta-value {
-    font-size: 0.9rem;
-    color: var(--cream);
+  .hero-chip {
+    font-size: 0.8rem;
     font-weight: 500;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid rgba(212,162,76,0.55);
+    border-radius: 999px;
+    color: var(--gold-soft);
+    background: rgba(0,0,0,0.15);
   }
 
   .main {
-    max-width: 800px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 2rem 1rem 4rem;
+    padding: 2.5rem 1rem 4rem;
   }
 
-  /* ── SECTION TITLES ── */
   .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
     font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--pine);
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 2px solid var(--sand);
+    color: var(--evergreen);
+    text-align: center;
+    margin-bottom: 1.75rem;
+  }
+  .section-title::after {
+    content: '✦  ✦  ✦';
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--cranberry);
+    margin-top: 0.45rem;
   }
 
-  /* ── COURSE CARDS ── */
-  .course-cards { display: flex; flex-direction: column; gap: 1.25rem; }
-  .course-card {
-    background: #fff;
-    border: 1px solid var(--light-gray);
-    border-radius: 10px;
+  /* ── CARDS ── */
+  .cards { display: flex; flex-direction: column; gap: 1.5rem; }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(18,53,36,0.07);
   }
-  .course-card-top {
-    display: flex;
-    align-items: stretch;
+  .card-head {
+    background: var(--cranberry);
+    color: var(--snow);
+    padding: 1.1rem 1.25rem 1rem;
+    border-bottom: 3px solid var(--gold);
   }
-  .course-day-tag {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    transform: rotate(180deg);
-    background: var(--pine);
-    color: var(--sand);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.75rem 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .course-card-main { flex: 1; min-width: 0; padding: 1.1rem 1.25rem 1rem; }
-  .course-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--pine);
-    margin-bottom: 0.2rem;
-  }
-  .course-designer {
-    font-size: 0.78rem;
-    color: var(--mid-gray);
-    margin-bottom: 0.75rem;
-    font-style: italic;
-  }
-  .course-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 0.85rem;
-  }
-  .course-stat {
-    background: var(--cream);
-    border: 1px solid var(--sand-light);
-    border-radius: 4px;
-    padding: 0.25rem 0.6rem;
-    font-family: 'DM Mono', monospace;
+  .card-num {
     font-size: 0.68rem;
-    color: var(--pine);
-    letter-spacing: 0.05em;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 0.3rem;
   }
-  .course-desc {
-    font-size: 0.85rem;
-    color: var(--mid-gray);
-    line-height: 1.55;
-    margin-bottom: 0.85rem;
+  .card-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.2;
   }
-  .booking {
+  .card-place {
+    margin-top: 0.25rem;
     font-size: 0.82rem;
-    color: var(--mid-gray);
-    line-height: 1.5;
-    margin-bottom: 0.85rem;
-    padding: 0.6rem 0.75rem;
-    border-left: 3px solid var(--sand);
-    background: var(--warm-white);
+    color: rgba(251,248,242,0.8);
   }
-  .booking-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
+
+  .card-rows { padding: 0.35rem 1.25rem; }
+  .row {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    gap: 0.75rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 0.92rem;
+    align-items: baseline;
+  }
+  .row:last-child { border-bottom: none; }
+  .row-label {
+    font-size: 0.7rem;
+    font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--sage);
-    display: block;
-    margin-bottom: 0.2rem;
+    color: var(--holly);
   }
-  .booking strong { color: var(--charcoal); font-weight: 600; }
-  .course-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  .row-value { color: var(--ink); line-height: 1.45; }
+  .row-value strong { font-weight: 600; }
+  .row-value .open { color: var(--holly); font-weight: 600; }
+  .row-value .sub { display: block; font-size: 0.8rem; color: var(--muted); }
+
+  .card-foot {
+    padding: 0.9rem 1.25rem 1.15rem;
+    background: var(--snow);
+    border-top: 1px solid var(--line);
   }
-  .course-link {
+  .card-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
-    font-size: 0.75rem;
-    font-family: 'DM Mono', monospace;
-    letter-spacing: 0.05em;
-    color: var(--pine-light);
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--evergreen);
     text-decoration: none;
-    border: 1px solid var(--sage);
-    border-radius: 4px;
-    padding: 0.3rem 0.65rem;
-    transition: all 0.18s;
+    border: 1.5px solid var(--evergreen);
+    border-radius: 999px;
+    padding: 0.45rem 1rem;
+    transition: background 0.15s, color 0.15s;
   }
-  .course-link:hover {
-    background: var(--pine);
-    color: var(--sand);
-    border-color: var(--pine);
-  }
-  .course-fee {
-    background: var(--pine);
-    color: var(--sand);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    padding: 0.35rem 0.85rem;
-    border-radius: 0 0 8px 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-    margin: 0 -1px -1px;
-  }
-  .course-format {
-    font-size: 0.7rem;
-    color: var(--sage);
-  }
+  .card-link:hover { background: var(--evergreen); color: var(--snow); }
 
   .note {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
     font-size: 0.8rem;
-    color: var(--mid-gray);
+    color: var(--muted);
     line-height: 1.5;
+  }
+
+  @media (max-width: 480px) {
+    .row { grid-template-columns: 1fr; gap: 0.2rem; }
   }
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Christmas 2026 · Savannah, GA</div>
-    <h1>Christmas <em>Golf</em></h1>
-    <div class="hero-subtitle">One round, three options</div>
-    <div class="hero-meta">
-      <div class="hero-meta-item">
-        <div class="hero-meta-label">In Town</div>
-        <div class="hero-meta-value">Dec 23 – 27</div>
-      </div>
-      <div class="hero-meta-item">
-        <div class="hero-meta-label">Golf Day</div>
-        <div class="hero-meta-value">Thu 12/24 or Sat 12/26</div>
-      </div>
-    </div>
+<header class="hero">
+  <div class="hero-eyebrow">Christmas 2026 · Savannah, GA</div>
+  <h1>A Round for <em>Christmas</em></h1>
+  <div class="hero-sub">Three courses to pick from for one round while we're in town</div>
+  <div class="hero-chips">
+    <span class="hero-chip">In town Dec 23 – 27</span>
+    <span class="hero-chip">Golf Thu 12/24 or Sat 12/26</span>
   </div>
-</div>
+</header>
 
-<div class="main">
+<main class="main">
   <h2 class="section-title">The Options</h2>
-  <div class="course-cards">
+  <div class="cards">
 
     <!-- Palmetto Dunes -->
-    <div class="course-card">
-      <div class="course-card-top">
-        <div class="course-day-tag">Option 1</div>
-        <div class="course-card-main">
-          <div class="course-name">Palmetto Dunes · Arthur Hills Course</div>
-          <div class="course-designer">Hilton Head Island, SC · ~40 min from the Airbnb</div>
-          <div class="course-stats">
-            <span class="course-stat">$85–125 / person</span>
-            <span class="course-stat">~40 min</span>
-            <span class="course-stat">3 courses</span>
-          </div>
-          <div class="course-desc">The best of the bunch and worth the drive. Arthur Hills is the pick here: highly rated and one of the top 30 public courses in South Carolina. The resort has two more if it's booked: George Fazio (the toughest of the three) and Robert Trent Jones (runs along the Atlantic, so expect wind). Price depends on the course and tee time.</div>
-          <div class="booking">
-            <span class="booking-label">When we can book</span>
-            <strong>Open now</strong> for both 12/24 and 12/26.
-          </div>
-          <div class="course-links">
-            <a href="https://www.palmettodunes.com/golf" class="course-link" target="_blank">🌐 Website</a>
-          </div>
+    <article class="card">
+      <div class="card-head">
+        <div class="card-num">Option 1</div>
+        <div class="card-name">Palmetto Dunes · Arthur Hills</div>
+        <div class="card-place">Hilton Head Island, SC</div>
+      </div>
+      <div class="card-rows">
+        <div class="row">
+          <div class="row-label">Cost</div>
+          <div class="row-value"><strong>$85–125</strong> per person<span class="sub">Depends on course and tee time</span></div>
+        </div>
+        <div class="row">
+          <div class="row-label">Drive</div>
+          <div class="row-value"><strong>~40 min</strong> from the Airbnb</div>
+        </div>
+        <div class="row">
+          <div class="row-label">Book 12/24</div>
+          <div class="row-value"><span class="open">Open now</span></div>
+        </div>
+        <div class="row">
+          <div class="row-label">Book 12/26</div>
+          <div class="row-value"><span class="open">Open now</span></div>
+        </div>
+        <div class="row">
+          <div class="row-label">Notes</div>
+          <div class="row-value">Top 30 public course in SC. Also has George Fazio (toughest) and Robert Trent Jones (on the ocean, windy).</div>
         </div>
       </div>
-      <div class="course-fee">
-        <span>$85–125</span>
-        <span class="course-format">Book anytime</span>
+      <div class="card-foot">
+        <a class="card-link" href="https://www.palmettodunes.com/golf" target="_blank" rel="noopener">Visit website →</a>
       </div>
-    </div>
+    </article>
 
     <!-- Savannah Harbor -->
-    <div class="course-card">
-      <div class="course-card-top">
-        <div class="course-day-tag">Option 2</div>
-        <div class="course-card-main">
-          <div class="course-name">The Club at Savannah Harbor</div>
-          <div class="course-designer">Westin Savannah Harbor resort, on the river across from downtown · 15 min from the Airbnb</div>
-          <div class="course-stats">
-            <span class="course-stat">~$110 / person</span>
-            <span class="course-stat">15 min</span>
-          </div>
-          <div class="course-desc">The nicer of the two Savannah courses and the easy choice if we'd rather not make a day of the drive.</div>
-          <div class="booking">
-            <span class="booking-label">When we can book</span>
-            Tee times open 30 days out at midnight:<br>
-            12/24 → <strong>Tue, Nov 24</strong> · 12/26 → <strong>Thu, Nov 26</strong>
-          </div>
-          <div class="course-links">
-            <a href="https://www.theclubatsavannahharbor.com/course/" class="course-link" target="_blank">🌐 Website</a>
-          </div>
+    <article class="card">
+      <div class="card-head">
+        <div class="card-num">Option 2</div>
+        <div class="card-name">The Club at Savannah Harbor</div>
+        <div class="card-place">Savannah, GA</div>
+      </div>
+      <div class="card-rows">
+        <div class="row">
+          <div class="row-label">Cost</div>
+          <div class="row-value"><strong>~$110</strong> per person</div>
+        </div>
+        <div class="row">
+          <div class="row-label">Drive</div>
+          <div class="row-value"><strong>15 min</strong> from the Airbnb</div>
+        </div>
+        <div class="row">
+          <div class="row-label">Book 12/24</div>
+          <div class="row-value"><strong>Tue, Nov 24</strong> at 12:00 AM<span class="sub">30 days out</span></div>
+        </div>
+        <div class="row">
+          <div class="row-label">Book 12/26</div>
+          <div class="row-value"><strong>Thu, Nov 26</strong> at 12:00 AM<span class="sub">30 days out</span></div>
+        </div>
+        <div class="row">
+          <div class="row-label">Notes</div>
+          <div class="row-value">Resort course on the river across from downtown. The nicer of the two in town.</div>
         </div>
       </div>
-      <div class="course-fee">
-        <span>~$110</span>
-        <span class="course-format">Opens Nov 24</span>
+      <div class="card-foot">
+        <a class="card-link" href="https://www.theclubatsavannahharbor.com/course/" target="_blank" rel="noopener">Visit website →</a>
       </div>
-    </div>
+    </article>
 
     <!-- Southbridge -->
-    <div class="course-card">
-      <div class="course-card-top">
-        <div class="course-day-tag">Option 3</div>
-        <div class="course-card-main">
-          <div class="course-name">Southbridge Golf Club</div>
-          <div class="course-designer">Rees Jones design · Savannah, GA · 15 min from the Airbnb</div>
-          <div class="course-stats">
-            <span class="course-stat">~$70 / person</span>
-            <span class="course-stat">15 min</span>
-          </div>
-          <div class="course-desc">The budget pick. Close by and the cheapest of the three, but it doesn't look as nice as the others.</div>
-          <div class="booking">
-            <span class="booking-label">When we can book</span>
-            Tee times open 14 days out at midnight:<br>
-            12/24 → <strong>Thu, Dec 10</strong> · 12/26 → <strong>Sat, Dec 12</strong>
-          </div>
-          <div class="course-links">
-            <a href="https://www.southbridgesavannahgolfclub.com" class="course-link" target="_blank">🌐 Website</a>
-          </div>
+    <article class="card">
+      <div class="card-head">
+        <div class="card-num">Option 3</div>
+        <div class="card-name">Southbridge Golf Club</div>
+        <div class="card-place">Savannah, GA</div>
+      </div>
+      <div class="card-rows">
+        <div class="row">
+          <div class="row-label">Cost</div>
+          <div class="row-value"><strong>~$70</strong> per person</div>
+        </div>
+        <div class="row">
+          <div class="row-label">Drive</div>
+          <div class="row-value"><strong>15 min</strong> from the Airbnb</div>
+        </div>
+        <div class="row">
+          <div class="row-label">Book 12/24</div>
+          <div class="row-value"><strong>Thu, Dec 10</strong> at 12:00 AM<span class="sub">14 days out</span></div>
+        </div>
+        <div class="row">
+          <div class="row-label">Book 12/26</div>
+          <div class="row-value"><strong>Sat, Dec 12</strong> at 12:00 AM<span class="sub">14 days out</span></div>
+        </div>
+        <div class="row">
+          <div class="row-label">Notes</div>
+          <div class="row-value">Rees Jones design. The budget pick, but doesn't look as nice as the others.</div>
         </div>
       </div>
-      <div class="course-fee">
-        <span>~$70</span>
-        <span class="course-format">Opens Dec 10</span>
+      <div class="card-foot">
+        <a class="card-link" href="https://www.southbridgesavannahgolfclub.com" target="_blank" rel="noopener">Visit website →</a>
       </div>
-    </div>
+    </article>
 
   </div>
 
   <p class="note">Prices are per person and may change. Holiday hours can be limited, especially on Christmas Eve.</p>
-</div>
+</main>
 
 </body>
 </html>
